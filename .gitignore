@@ -28,5 +28,13 @@
 
 # Executables
 *.exe
-*.out
 *.app
+
+# CMake shit
+cmake-build-debug/
+
+*.zip
+.DS_STORE
+.idea/
+
+./DOC
