@@ -17,4 +17,9 @@ int Experiment::consul_m() {
 }
 
 void Experiment::llegeix_experiment() {
-    
+    RegistreIndividus aux;
+
+    this->familia = Familia();
+    this->familia.llegeix_familia(aux);
+    this->individus = aux;
+}

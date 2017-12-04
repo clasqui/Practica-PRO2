@@ -26,18 +26,25 @@ public:
     
     /** @brief Llegeix una familia d'individus
 
-        Rep un vector d'individus per referència que anirà omplint amb els individus que crea, de manera que la funció que crida llegeix_familia el pot utilitzar després.
-        \pre <em>Cert</em>
+        \pre Rep per paràmetre un vector d'individus que anirà omplint.
         \post Familia amb el paràmetre arbre omplert.
     */
-    llegeix_familia(vector<Individu> &registre);
-    
-    
+    void llegeix_familia(vector<Individu>& registre);
+
+
 private:
-    
+
+    /** @brief LLegeix recursivament els individus d'una familia i els introdueix a l'arbre
+
+        \pre Rep per paràmetre un arbre buit.<br>Per l'entrada estàndard també rep un id 0 <= id <= n
+        \post L'arbre ara conté l'id llegit a l'arrel i els fills llegits.
+    */
+    void llegeix_familia_i(BinTree<Individu *> &arbre, vector<Individu>& registre);
+
+
     /** @brief Arbre del tipus BinTree que representa les relacions
      */
     BinTree<Individu *> arbre;
-}
+};
 
 #endif //PRACTICA_FAMILIA_HH

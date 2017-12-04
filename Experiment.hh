@@ -9,10 +9,12 @@
 #include <vector>
 #include <iostream>
 #include <string>
+#include <map>
 #endif
 
 #include "Individu.hh"
 #include "Tret.hh"
+#include "Familia.hh"
 
 using namespace std;
 
@@ -20,12 +22,12 @@ using namespace std;
 /** @brief Tipus Registre d'individus.<br>
  * El tipus RegistreIndividus és un mapa en el qual la clau és l'<em>id</em> de l'individu i el valor es un objecte de la classe Individu
     */
-typedef vector <Individu> RegistreIndividus;
+typedef vector<Individu> RegistreIndividus;
 
 /** @brief Tipus Registre de Trets.<br>
  * El tipus RegistreTrets és un mapa en el qual la clau és el nom del tret i el valor es un objecte de la classe Tret
     */
-typedef map <string, Tret> RegistreTrets;
+typedef map<string, Tret> RegistreTrets;
 
 /** @class Experiment
     @brief Representa un experiment amb els individus i els trets que estem estudiant.
@@ -123,6 +125,7 @@ private:
     /** @brief Objecte de tipus arbre que representa la familia d'individus amb la qual treballem en aquest experiment
      * 
      */
+     Familia familia;
     
 
 };

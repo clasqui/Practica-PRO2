@@ -12,7 +12,6 @@
 #endif
 
 #include "Cromosoma.hh"
-#include "Experiment.hh"
 #include "Tret.hh"
 
 using namespace std;
@@ -54,7 +53,7 @@ public:
       \pre <em>Cert</em>
       \post Retorna un parell d'enters amb els ids dels progenitors
     */
-    pair<int> consul_progenitors() const;
+    pair<int, int> consul_progenitors() const;
 
     /** @brief Consulta els trets
      \pre <em>Cert</em>
@@ -74,7 +73,7 @@ private:
 
     /** @brief parell amb els ids dels progenitors, si en té
     */
-    pair<int> progenitors;
+    pair<int, int> progenitors;
 
     /** @brief vector amb punters als trets que es manifesten en aquest individu
     */

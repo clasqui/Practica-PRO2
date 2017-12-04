@@ -9,7 +9,7 @@
 #include <vector>
 #include <iostream>
 #endif
-#include "Experiment.hh"
+
 using namespace std;
 
 /** @class Cromosoma
@@ -33,7 +33,7 @@ public:
       \pre <em>Cert</em>
       \post El paràmetre implícit ara té els vectors de cada cromosoma plens de gens
     */
-    void llegeix_gens(const Experiment& experiment);
+    void llegeix_gens(const int m);
 
 
     /** @brief Consulta els gens amb l'index i
