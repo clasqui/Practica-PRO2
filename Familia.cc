@@ -26,12 +26,13 @@ void Familia::llegeix_familia(vector<Individu>& registre) {
     this->llegeix_familia_i(esquerra, registre);
     this->llegeix_familia_i(dret, registre);
 
+
     // Construim el node
-    this->arbre = BinTree(i, esquerra, dret);
+    this->arbre = BinTree<Individu *>(&i, esquerra, dret);
 
 }
 
-void Familia::llegeix_familia_i(BinTree<Individu *> arbre, vector <Individu> &registre) {
+void Familia::llegeix_familia_i(BinTree<Individu *> &arbre, vector <Individu> &registre) {
     int id;
     cin >> id;
     // Sabem que els id van de 2 a n, per tant si es diferent de 0
@@ -41,11 +42,11 @@ void Familia::llegeix_familia_i(BinTree<Individu *> arbre, vector <Individu> &re
     }
     else {
         Individu i = Individu();
-        registre[i] = i;
+        registre[id] = i;
         BinTree<Individu *> esquerra;
         BinTree<Individu *> dret;
-        llegeix_familia_i(esquerra, registre);
-        llegeix_familia_i(dret, registre);
-        arbre = BinTree(i, esquerra, dret);s
+        this->llegeix_familia_i(esquerra, registre);
+        this->llegeix_familia_i(dret, registre);
+        arbre = BinTree<Individu *>(&i, esquerra, dret);
     }
 }

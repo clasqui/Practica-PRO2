@@ -22,18 +22,21 @@ public:
     //Constructores
 
     /** @brief Constructora per defecte.
-
         S'executa automàticament en declarar un Cromosoma.
-        \pre Cert
+
+        \pre <em>Cert</em>
         \post El resultat és un Cromosoma nou.
     */
     Cromosoma();
-    
-    /** @brief Llegeix els gens del parell de cromosomes
-      \pre <em>Cert</em>
-      \post El paràmetre implícit ara té els vectors de cada cromosoma plens de gens
+
+    /** @brief Constructora per defecte.
+        Llegeix els gens del parell de cromosomes.
+        S'executa automàticament en declarar un Cromosoma.
+
+        \pre Dues sèries de m gens a l'entrada estàndard
+        \post El resultat és un Cromosoma nou.
     */
-    void llegeix_gens(const int m);
+    Cromosoma(const int m);
 
 
     /** @brief Consulta els gens amb l'index i
