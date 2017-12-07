@@ -55,11 +55,15 @@ public:
       \pre codi = {0, 1}
       \post Imprimeix els gens del primer cromosoma si el codi es 0 o del segon cromosoma si el codi es 1
     */
-    void imprimeix_cromosoma(int codi);
+    void imprimeix_cromosoma(int codi) const;
 
 
 
 private:
+    /** @brief Helper function que converteix els caracters de l'entrada estandard en int 1 o 0
+     *
+     */
+    int convert_char_int(char c);
     /** @brief Vector de gens del primer cromosoma del parell
      *
      */

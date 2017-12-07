@@ -9,6 +9,7 @@
 #include <vector>
 #include <iostream>
 #include <string>
+#include <set>
 #endif
 
 #include "Cromosoma.hh"
@@ -49,6 +50,12 @@ public:
     */
     Cromosoma consul_cromosomes() const;
 
+    /** @brief Imprimeix els cromosomes a l'entrada estàndard
+      \pre <em>Cert</em>
+      \post Mostra els cromosomes del paràmetre implícit a l'entrada estàndard
+    */
+    void mostra_cromosomes() const;
+
     /** @brief Consulta els id dels progenitors
       \pre <em>Cert</em>
       \post Retorna un parell d'enters amb els ids dels progenitors
@@ -60,6 +67,12 @@ public:
      \post Retorna un vector d'strings amb els noms dels trets
    */
     vector<string> consul_trets() const;
+
+    /** @brief Imprimeix els trets
+     \pre <em>Cert</em>
+     \post Mostra els trets d'aquell individu ordenats alfabèticament
+   */
+    void mostra_trets() const;
 
 
 
@@ -77,7 +90,7 @@ private:
 
     /** @brief vector amb punters als trets que es manifesten en aquest individu
     */
-    vector<Tret*> trets;
+    set<Tret*> trets;
 
 
 };

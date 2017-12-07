@@ -25,7 +25,7 @@ using namespace std;
 typedef vector<Individu> RegistreIndividus;
 
 /** @brief Tipus Registre de Trets.<br>
- * El tipus RegistreTrets és un mapa en el qual la clau és el nom del tret i el valor es un objecte de la classe Tret
+ * El tipus RegistreTrets és un map en el qual la clau és el nom del tret i el valor es un objecte de la classe Tret
     */
 typedef map<string, Tret> RegistreTrets;
 
@@ -72,25 +72,25 @@ public:
       \pre Rep el nom del tret i l'id de l'individu al que li afegirà
       \post El paràmetre implícit ara conté el nou tret al registre de trets, si no existia.
     */
-    void afegeix_tret(string nom, int id);
+    // void afegeix_tret(string nom, int id);
 
 
     /** @brief Elimina un tret a un individu.
       \pre Rep el nom del tret i l'id de l'individu al qual ja no es manifesta
       \post Si aquest tret no es manifesta a cap mes individu després d'aquest procediment, s'elimina del registre de trets.
     */
-    void treu_tret(string nom, int id);
+    // void treu_tret(string nom, int id);
 
     /** @brief Consulta un tret.
       \pre Rep el nom del tret que es vol consultar
       \post Es mostra la combinacio que fa que es manifesti aquest tret i els ids del individus en els quals es manifesta
     */
-    void consulta_tret(string nom);
+    // void consulta_tret(string nom);
 
 
     /** @brief Consulta un individu.
       \pre Rep l'id de l'individu que es vol consultar
-      \post Es mostra els cromosomes de l'individu i els trets que es manifesten en aquest individu
+      \post Es mostra els cromosomes de l'individu i els trets que es manifesten en aquest individu ordenats per ordre alfabètic
     */
     void consulta_individu(int id);
 
@@ -98,7 +98,7 @@ public:
      \pre <em>Rep el nom del tret</em>
      \post Imprimeix l'arbre genealogic en inordre amb els indvidus, dient en cada cas si es manifesta o no.
    */
-    void distribucio_tret(string nom);
+    // void distribucio_tret(string nom);
 
 
 

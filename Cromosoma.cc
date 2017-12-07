@@ -12,19 +12,35 @@ Cromosoma::Cromosoma(const int m) {
 
     //Omplim el cromosoma 1
     for (int i = 0; i < m; ++i) {
-        int x;
-        cin >> x;
-        c1[i] = x;
+        char c;
+        cin >> c;
+        c1[i] = convert_char_int(c);
     }
 
     //Omplim el cromosoma 2
     for (int i = 0; i < m; ++i) {
-        int x;
-        cin >> x;
-        c2[i] = x;
+        char c;
+        cin >> c;
+        c2[i] = convert_char_int(c);
     }
 }
 
 pair<int, int> Cromosoma::consul_gen(int i) const {
     return make_pair(c1[i], c2[i]);
+}
+
+void Cromosoma::imprimeix_cromosoma(int codi) const {
+    vector<int> c;
+    if(codi==0) c = c1;
+    else if(codi==1) c = c2;
+    else return;
+    cout << "  ";
+    for (int i = 0; i < c.size(); ++i) {
+        cout << c[i];
+    }
+}
+
+int Cromosoma::convert_char_int(char c) {
+    int i = c - '0';
+    return i;
 }

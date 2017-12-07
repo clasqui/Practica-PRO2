@@ -6,7 +6,7 @@
 #define PRACTICA_FAMILIA_HH
 
 #include "Individu.hh"
-#include "BinTree.hh"
+#include "BinTree.cc"
 
 /** @class Familia
  *  @brief Representa els individus d'un experiment i les seves relacions paternofilials.

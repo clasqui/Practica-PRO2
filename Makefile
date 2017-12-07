@@ -1,29 +1,29 @@
 OPCIONS = -D_JUDGE_ -D_GLIBCXX_DEBUG -O2 -Wall -Wextra -Werror -Wno-uninitialized -Wno-sign-compare -std=c++0x
 
 
-program.exe: program.o Cromosoma.o Especie.o Individu.o Poblacio.o Arbre.o PRO2Excepcio.o
-	g++ -o program.exe program.o Cromosoma.o Especie.o Individu.o Poblacio.o Arbre.o PRO2Excepcio.o
+program.exe: program.o Cromosoma.o Experiment.o Individu.o Tret.o BinTree.o Familia.o
+	g++ -o program.exe program.o Experiment.o Cromosoma.o Tret.o Individu.o BinTree.o Familia.o
 
 program.o: program.cc
 	g++ -c program.cc $(OPCIONS)
 
-Especie.o: Especie.cc
-	g++ -c Especie.cc $(OPCIONS)
+Experiment.o: Experiment.cc
+	g++ -c Experiment.cc $(OPCIONS)
 
 Cromosoma.o: Cromosoma.cc
 	g++ -c Cromosoma.cc $(OPCIONS)
 
-Poblacio.o: Poblacio.cc
-	g++ -c Poblacio.cc $(OPCIONS)
+Tret.o: Tret.cc
+	g++ -c Tret.cc $(OPCIONS)
 
 Individu.o: Individu.cc
 	g++ -c Individu.cc $(OPCIONS)
 
-Arbre.o: Arbre.cc
-	g++ -c Arbre.cc $(OPCIONS)
+Familia.o: Familia.cc
+	g++ -c Familia.cc $(OPCIONS)
 
-PRO2Excepcio.o: PRO2Excepcio.cc
-	g++ -c PRO2Excepcio.cc $(OPCIONS)
+BinTree.o: BinTree.cc
+	g++ -c BinTree.cc $(OPCIONS)
 
 
 #

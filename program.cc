@@ -28,7 +28,8 @@ int main() {
         if (comm == "experiment") {
             int n, m;
             cin >> n >> m;
-            experiment = new Experiment(n, m);
+            cout << " " << n << " " << m << endl;
+            experiment = Experiment(n, m);
             experiment.llegeix_experiment();
 
         }
@@ -36,32 +37,33 @@ int main() {
             string nom;
             int id;
             cin >> nom >> id;
-            experiment.afegeix_tret(nom, id);
+            // experiment.afegeix_tret(nom, id);
 
         }
         if (comm == "treure") {
             string nom;
             int id;
             cin >> nom >> id;
-            experiment.treu_tret(nom, id);
+            // experiment.treu_tret(nom, id);
 
         }
         if (comm == "consulta_tret") {
             string nom;
             cin >> nom;
-            experiment.consulta_tret(nom);
+            // experiment.consulta_tret(nom);
 
         }
         if(comm == "consulta_individu") {
             int id;
             cin >> id;
+            cout << " " << id << endl;
             experiment.consulta_individu(id);
 
         }
         if(comm == "distribucio_tret") {
             string nom;
             cin >> nom;
-            experiment.distribucio_tret(nom);
+            // experiment.distribucio_tret(nom);
         }
 
         cin >> comm;
