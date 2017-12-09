@@ -4,7 +4,9 @@
 
 #include "Individu.hh"
 
-Individu::Individu() {}
+Individu::Individu() {
+    this->trets = set<Tret *>();
+}
 
 void Individu::llegeix_individu(int m) {
     Cromosoma c = Cromosoma(m);
@@ -25,4 +27,12 @@ void Individu::mostra_trets() const {
         Tret *p = *it;
         cout << p->consul_nom() << endl;
     }
+}
+
+void Individu::afegeix_tret(Tret *t) {
+    this->trets.insert(t);
+}
+
+Cromosoma Individu::consul_cromosomes() const {
+    return this->cromosomes;
 }

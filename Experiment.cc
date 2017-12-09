@@ -43,3 +43,36 @@ void Experiment::consulta_individu(int id) {
     i.mostra_trets();
 
 }
+
+void Experiment::afegeix_tret(string nom, int id) {
+    Tret t;
+    // Primer comprovem si existeix
+    map<string, Tret>::iterator result = this->trets.find(nom);
+    if(result != this->trets.end()) {
+        // Existeix
+        t = this->trets[nom];
+
+        // Comprovem si ja es manifesta en aquell individu
+        if(t.es_manifesta(id)) {
+            cout << "  error" << endl;
+            return;
+        }
+    } else {
+        t = Tret(nom, this->m);
+    }
+    // Enllacem un amb l'altre (posem el id del individu al tret, i una referencia del tret al individu)
+    t.afegeix_manifestacio(id);
+    this->individus[id].afegeix_tret(&t);
+
+    // Recalculem la intersecció
+    recalcular_tret_addició(t, id);
+
+
+    //Quan hem acabat, posem el tret al registre un altre cop
+    this->trets[nom] = t;
+}
+
+void Experiment::recalcular_tret_addició(Tret &t, int id) {
+    Cromosoma c = individus[id].consul_cromosomes();
+    t.recalcular_interseccio(c);
+}

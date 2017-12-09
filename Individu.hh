@@ -74,6 +74,12 @@ public:
    */
     void mostra_trets() const;
 
+    /** @brief Afegeix un tret
+     * Enllaça un tret amb el paràmetre implícit
+     * \pre Rep un punter a un tret
+     * \post El paràmetre implícit ara conté el tret a la llista
+     */
+    void afegeix_tret(Tret *t);
 
 
 

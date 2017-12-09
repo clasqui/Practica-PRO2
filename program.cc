@@ -37,7 +37,7 @@ int main() {
             string nom;
             int id;
             cin >> nom >> id;
-            // experiment.afegeix_tret(nom, id);
+            experiment.afegeix_tret(nom, id);
 
         }
         if (comm == "treure") {

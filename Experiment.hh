@@ -72,7 +72,7 @@ public:
       \pre Rep el nom del tret i l'id de l'individu al que li afegirà
       \post El paràmetre implícit ara conté el nou tret al registre de trets, si no existia.
     */
-    // void afegeix_tret(string nom, int id);
+    void afegeix_tret(string nom, int id);
 
 
     /** @brief Elimina un tret a un individu.
@@ -126,6 +126,16 @@ private:
      * 
      */
      Familia familia;
+
+    /** @brief Recalcula la intersecció dels gens que fan que es manifesti un Tret t
+     * Cridem aquesta funció només quan el càlcul s'ha de fer perquè s'ha afegit un individu, ja que és molt més fàcil i menys costós.
+     *
+     * @param t Referència al Tret que hem de recalcular
+     * @param id ID de l'individu que estem afegint a la intersecció
+     * \pre Rep un Tret t per referència i un id d'un individu 1 <= id <= n
+     * \post El Tret t ara conté la intersecció de gens que fan que es manifesti correctament
+     */
+    void recalcular_tret_addició(Tret &t, int id);
     
 
 };

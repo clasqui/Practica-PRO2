@@ -6,10 +6,15 @@
 #define PRACTICA_TRET_HH
 
 #ifndef NO_DIAGRAM
-#include <vector>
+#include <list>
 #include <iostream>
 #include <string>
+#include <algorithm>
+#include <vector>
 #endif
+
+#include "Cromosoma.hh"
+
 
 using namespace std;
 
@@ -33,10 +38,10 @@ public:
     /** @brief Constructora per defecte.
 
         S'executa automàticament en declarar un Tret amb un nom.
-        \pre Rep un string amb el nom del nou tret i un int n que serà la mida del vector d'individus
-        \post El resultat és un Individu nou amb el paràmetre <em>nom</em> i <em>individus</em> inicialitzats.
+        \pre Rep un string amb el nom del nou tret i un int amb el numero de gens per cromosoma
+        \post El resultat és un Tret nou amb el paràmetre <em>nom</em> inicialitzat.
     */
-    Tret(string nom, int n);
+    Tret(string nom, int m);
 
 
     /** @brief Consulta el nom del tret
@@ -50,7 +55,7 @@ public:
       \pre <em>id de l'individu</em>
       \post Retorna el nom de l'individu
     */
-    void afegeix_manifestacio(int id) const;
+    void afegeix_manifestacio(int id);
 
     /** @brief Treu un individu al qual es manifesta el tret
       \pre <em>id de l'individu</em>
@@ -68,7 +73,19 @@ public:
       \pre <em>Cert</em>
       \post Retorna el vecotr d'enters amb els id dels individus.
     */
-    vector<int> consulta_individus() const;
+    list<int> consulta_individus() const;
+
+    /** @brief Ens diu si el tret es manifesta a un individu
+      \pre un id 1 <= id <= n
+      \post Retorna un bool amb el resultat
+    */
+    bool es_manifesta(int id) const;
+
+    /** @brief Recalcula la manifestació del tret fent la intersecció entre l'actual i els gens del cromosoma que rep.
+     *  \pre Rep per referència un Cromosoma c amb els gens
+     *  \post Ara el paràmetre implícit conté la intersecció dels gens entre l'actual i el Cromosoma que rep.
+     */
+     void recalcular_interseccio(Cromosoma &c);
 
 
 private:
@@ -78,7 +95,14 @@ private:
 
     /** @brief individus als quals es manifesta el tret
     */
-    vector<int> individus;
+    list<int> individus;
+
+    /** @brief Combinació de parells de cromosomes que fan que es manifesti el tret
+     *
+     */
+     vector<pair<int, int>> interseccio;
+
+
 
 };
 
