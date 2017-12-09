@@ -37,6 +37,7 @@ int main() {
             string nom;
             int id;
             cin >> nom >> id;
+            cout << " " << nom << " " << id << endl;
             experiment.afegeix_tret(nom, id);
 
         }
