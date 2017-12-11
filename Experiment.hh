@@ -83,9 +83,9 @@ public:
 
     /** @brief Consulta un tret.
       \pre Rep el nom del tret que es vol consultar
-      \post Es mostra la combinacio que fa que es manifesti aquest tret i els ids del individus en els quals es manifesta
+      \post Es mostra la combinacio que fa que es manifesti aquest tret i els ids del individus en els quals es manifesta. Si no existeix escriu "error".
     */
-    // void consulta_tret(string nom);
+    void consulta_tret(string nom);
 
 
     /** @brief Consulta un individu.

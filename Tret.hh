@@ -67,13 +67,20 @@ public:
       \pre <em>Cert</em>
       \post Imprimeix els gens pels quals es manifesta el tret
     */
-    void consulta_tret() const;
+    void mostra_interseccio() const;
 
     /** @brief Retona els individus als quals es manifesta el tret
       \pre <em>Cert</em>
       \post Retorna el vecotr d'enters amb els id dels individus.
+      TODO Comprovar si es realment necessària la funció
     */
     list<int> consulta_individus() const;
+
+    /** @brief Mostra els individus als quals es manifesta el tret a la sortida estàndard
+      \pre <em>Cert</em>
+      \post Mostra els individus que manifesten el tret per ordre creixent d'identificador.
+    */
+    void mostra_individus() const;
 
     /** @brief Ens diu si el tret es manifesta a un individu
       \pre un id 1 <= id <= n
@@ -85,7 +92,7 @@ public:
      *  \pre Rep per referència un Cromosoma c amb els gens
      *  \post Ara el paràmetre implícit conté la intersecció dels gens entre l'actual i el Cromosoma que rep.
      */
-     void recalcular_interseccio(Cromosoma &c);
+    void recalcular_interseccio(Cromosoma &c);
 
 
 private:

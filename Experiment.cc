@@ -3,6 +3,7 @@
  */
 
 #include "Experiment.hh"
+#include <cassert>
 
 Experiment::Experiment() {
 }
@@ -72,7 +73,21 @@ void Experiment::afegeix_tret(string nom, int id) {
     this->trets[nom] = t;
 }
 
+void Experiment::consulta_tret(string nom) {
+    Tret t;
+    map<string, Tret>::iterator result = this->trets.find(nom);
+    if(result == this->trets.end()) {
+        cout << "  error" << endl;
+    } else {
+        cout << "  " << nom << endl;
+        t = (*result).second;
+        t.mostra_interseccio();
+        t.mostra_individus();
+    }
+}
+
 void Experiment::recalcular_tret_addició(Tret &t, int id) {
     Cromosoma c = individus[id].consul_cromosomes();
     t.recalcular_interseccio(c);
 }
+

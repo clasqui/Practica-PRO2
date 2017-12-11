@@ -51,7 +51,8 @@ int main() {
         if (comm == "consulta_tret") {
             string nom;
             cin >> nom;
-            // experiment.consulta_tret(nom);
+            cout << " " << nom << endl;
+            experiment.consulta_tret(nom);
 
         }
         if(comm == "consulta_individu") {
