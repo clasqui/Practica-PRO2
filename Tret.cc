@@ -3,13 +3,16 @@
 */
 
 #include "Tret.hh"
+#include <cassert>
 
 Tret::Tret() {}
+
 
 Tret::Tret(string nom, int m) {
     this->nom = nom;
     this->individus = list<int>();
     interseccio = vector<pair<int, int>>(m);
+    this->recalcular = true;
 }
 
 string Tret::consul_nom() const {
@@ -26,10 +29,11 @@ void Tret::afegeix_manifestacio(int id) {
 }
 
 void Tret::recalcular_interseccio(Cromosoma &c) {
-    if(this->individus.size() == 1) {
+    if(recalcular) {
         for (int i = 0; i < interseccio.size(); ++i) {
             interseccio[i] = c.consul_gen(i);
         }
+        recalcular = false;
     } else {
         for (int i = 0; i < interseccio.size(); ++i) {
             if(interseccio[i].first != c.consul_gen(i).first ||
@@ -72,4 +76,22 @@ void Tret::mostra_individus() const {
     for (it = individus.begin(); it != individus.end(); ++it) {
         cout << "  " << *it << endl;
     }
+}
+
+bool Tret::treu_manifestacio(int id) {
+    list<int>::iterator it = find(individus.begin(), individus.end(), id);
+    individus.erase(it);
+    return (individus.size() == 0);
+}
+
+int Tret::count_individus() const {
+    return individus.size();
+}
+
+void Tret::buida() {
+    this->recalcular = true;
+}
+
+list<int> Tret::consulta_individus() const {
+    return individus;
 }

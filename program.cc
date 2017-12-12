@@ -45,7 +45,8 @@ int main() {
             string nom;
             int id;
             cin >> nom >> id;
-            // experiment.treu_tret(nom, id);
+            cout << " " << nom << " " << id << endl;
+            experiment.treu_tret(nom, id);
 
         }
         if (comm == "consulta_tret") {

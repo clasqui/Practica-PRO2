@@ -35,6 +35,7 @@ public:
     */
     Tret();
 
+
     /** @brief Constructora per defecte.
 
         S'executa automàticament en declarar un Tret amb un nom.
@@ -57,11 +58,12 @@ public:
     */
     void afegeix_manifestacio(int id);
 
-    /** @brief Treu un individu al qual es manifesta el tret
-      \pre <em>id de l'individu</em>
-      \post Retorna el nom de l'individu
+    /** @brief Treu un individu en el que el tret es manifesta
+        La funció també ens indicacrà a través d'un bool si el tret ja no es manifesta en CAP individu, i per tant s'ha d'eliminar.
+      \pre Rep un id, 1 <= id <= n,  de l'individu
+      \post El resultat és true si després d'eliminar l'individu no queden individus.
     */
-    void treu_manifestacio(int id) const;
+    bool treu_manifestacio(int id);
 
     /** @brief Imprimeix els gens pels quals es manifesta el tret
       \pre <em>Cert</em>
@@ -72,9 +74,14 @@ public:
     /** @brief Retona els individus als quals es manifesta el tret
       \pre <em>Cert</em>
       \post Retorna el vecotr d'enters amb els id dels individus.
-      TODO Comprovar si es realment necessària la funció
     */
     list<int> consulta_individus() const;
+
+    /** @brief Retona els numero d'individus als quals es manifesta el tret
+      \pre <em>Cert</em>
+      \post L'enter indica el nombre d'elements de la llista individus
+    */
+    int count_individus() const;
 
     /** @brief Mostra els individus als quals es manifesta el tret a la sortida estàndard
       \pre <em>Cert</em>
@@ -94,6 +101,12 @@ public:
      */
     void recalcular_interseccio(Cromosoma &c);
 
+    /** @brief Indica que el tret és buit, i per tant s'ha de recalcular
+     * \pre <em>Cert</em>
+     * \post El paràmetre implícit ara conté el booleà <em>recalcular</em> igual a <em>true</em>
+     */
+    void buida();
+
 
 private:
     /** @brief Nom de l'individu
@@ -108,6 +121,12 @@ private:
      *
      */
      vector<pair<int, int>> interseccio;
+
+    /** @brief Ens indica que la intersecció s'haurà de recalcular des de 0
+     * Això fa substancialment diferent la funció recalcular_interseccio(), ja que si recalcular = true,
+     * el cromosoma que es calcula es posa directament a la intersecció.
+     */
+    bool recalcular;
 
 
 

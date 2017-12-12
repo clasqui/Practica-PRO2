@@ -79,7 +79,7 @@ public:
       \pre Rep el nom del tret i l'id de l'individu al qual ja no es manifesta
       \post Si aquest tret no es manifesta a cap mes individu després d'aquest procediment, s'elimina del registre de trets.
     */
-    // void treu_tret(string nom, int id);
+    void treu_tret(string nom, int id);
 
     /** @brief Consulta un tret.
       \pre Rep el nom del tret que es vol consultar
@@ -136,6 +136,15 @@ private:
      * \post El Tret t ara conté la intersecció de gens que fan que es manifesti correctament
      */
     void recalcular_tret_addició(Tret &t, int id);
+
+    /** @brief Recalcula la intersecció dels gens que fan que es manifesti un Tret t
+     *  Cridem aquesta funció només quan el càlcul s'ha de fer perquè s'ha eliminat el tret en un indvidu.
+     *
+     * @param t Referència al Tret que hem de recalcular
+     * \pre Rep un Tret t per referència
+     * \post El Tret t ara conté la intersecció de gens que fan que es manifesti correctament
+     */
+    void recalcular_tret_supressio(Tret &t);
     
 
 };

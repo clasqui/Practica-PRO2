@@ -81,6 +81,12 @@ public:
      */
     void afegeix_tret(Tret *t);
 
+    /** @brief Elimina un Tret t del paràmetre implícit.
+     * \pre Rep un punter a un tret
+     * \post El paràmetre implícit ara no conté aquest tret al set de Trets.
+     */
+    void elimina_tret(Tret *t);
+
 
 
 private:

@@ -36,3 +36,7 @@ void Individu::afegeix_tret(Tret *t) {
 Cromosoma Individu::consul_cromosomes() const {
     return this->cromosomes;
 }
+
+void Individu::elimina_tret(Tret *t) {
+    trets.erase(t);
+}
