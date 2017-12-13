@@ -105,6 +105,18 @@ void Experiment::treu_tret(string nom, int id) {
     }
 }
 
+void Experiment::distribucio_tret(string nom) {
+    Tret t;
+    map<string, Tret>::iterator result = this->trets.find(nom);
+    if(result == this->trets.end()) {
+        cout << "  error" << endl;
+    } else {
+        t = (*result).second;
+        
+    }
+    
+}
+
 //Funcions Privades
 void Experiment::recalcular_tret_addició(Tret &t, int id) {
     Cromosoma c = individus[id].consul_cromosomes();

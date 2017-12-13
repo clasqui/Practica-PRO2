@@ -88,17 +88,17 @@ public:
     void consulta_tret(string nom);
 
 
-    /** @brief Consulta un individu.
+    /** @brief Mostra un individu.
       \pre Rep l'id de l'individu que es vol consultar
-      \post Es mostra els cromosomes de l'individu i els trets que es manifesten en aquest individu ordenats per ordre alfabètic
+      \post Es mostren els cromosomes de l'individu i els trets que es manifesten en aquest individu ordenats alfabèticament.
     */
     void consulta_individu(int id);
 
-    /** @brief Consulta la distribució d'un tret
+    /** @brief Mostra la distribució d'un tret
      \pre <em>Rep el nom del tret</em>
      \post Imprimeix l'arbre genealogic en inordre amb els indvidus, dient en cada cas si es manifesta o no.
    */
-    // void distribucio_tret(string nom);
+    void distribucio_tret(string nom);
 
 
 

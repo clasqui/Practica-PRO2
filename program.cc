@@ -66,7 +66,8 @@ int main() {
         if(comm == "distribucio_tret") {
             string nom;
             cin >> nom;
-            // experiment.distribucio_tret(nom);
+            cout << " " << nom << endl;
+            experiment.distribucio_tret(nom);
         }
 
         cin >> comm;

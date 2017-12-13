@@ -32,6 +32,12 @@ void Familia::llegeix_familia(vector<Individu>& registre) {
 
 }
 
+void imprimeix_distribucio(Tret &t) const {
+    cout << " ";
+}
+
+//Funcions Privades
+
 void Familia::llegeix_familia_i(BinTree<Individu *> &arbre, vector <Individu> &registre) {
     int id;
     cin >> id;
@@ -49,4 +55,40 @@ void Familia::llegeix_familia_i(BinTree<Individu *> &arbre, vector <Individu> &r
         this->llegeix_familia_i(dret, registre);
         arbre = BinTree<Individu *>(&i, esquerra, dret);
     }
+}
+
+pair<bool, BinTree<int>> construeix_subarbre_distribucio(BinTree<Individu *> &arbre, Tret &t) {
+    if(arbre.empty()) {
+        return make_pair(false, BinTree<int>());
+    }
+    
+    pair<bool, BinTree<int>> ha_manifestat_esquerra = construeix_subarbre_distribucio(arbre.left(), t);
+    pair<bool, BinTree<int>> ha_manifestat_dret = construeix_subarbre_distribucio(arbre.right(), t);
+    
+    BinTree<int> res;
+    
+    if(ha_manifestat_esquerra.first || ha_manifestat_dret.first) {
+        // Sha manifestat abans en algun dels dos fills, per tant retornarem true al parell.  Ara determinem quins fills posem al nou subarbre.
+        int val;
+        if(t.es_manifesta(arbre.value)) val = arbre.value();
+          else val = -1*arbre.value();
+          
+        if(ha_manifestat_esquerra.first && ha_manifestat_dret.first) {
+            // S'ha manifestat abans en ambdós fills, per tant els conservem als dos en el nou subarbre.
+            res = BinTree<int>(val, ha_manifestat_esquerra.second, ha_manifestat_dret.second);
+        } else if(ha_manifestat_esquerra.first) {
+            // S'ha manifestat abans en el fill esquerra, per tant conservem aquest en el nou subarbre.
+            res = BinTree<int>(val, ha_manifestat_esquerra.second, BinTree<int>());
+        } else {
+            // S'ha manifestat abans en el fill dret, per tant conservem aquest en el nou subarbre.
+            res = BinTree<int>(val, ha_manifestat_dret.second, BinTree<int>());
+        }
+        return make_pair(true, res);
+    } else {
+        // No s'ha manifestat abans.  COmprovem ara si l'individu del node actual manifesta el tret.
+        if(t.es_manifesta(arbre.value)) val = arbre.value();
+          else val = -1*arbre.value();
+        return make_pair(t.es_manifesta(arbre.value()), BinTree<int>(val));
+    }
+    
 }
