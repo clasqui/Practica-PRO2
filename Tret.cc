@@ -26,6 +26,7 @@ bool Tret::es_manifesta(int id) const {
 
 void Tret::afegeix_manifestacio(int id) {
     individus.insert(individus.end(), id);
+    individus.sort();
 }
 
 void Tret::recalcular_interseccio(Cromosoma &c) {

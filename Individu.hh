@@ -62,12 +62,6 @@ public:
     */
     pair<int, int> consul_progenitors() const;
 
-    /** @brief Consulta els trets
-     \pre <em>Cert</em>
-     \post Retorna un vector d'strings amb els noms dels trets
-   */
-    vector<string> consul_trets() const;
-
     /** @brief Imprimeix els trets
      \pre <em>Cert</em>
      \post Mostra els trets d'aquell individu ordenats alfabèticament
@@ -79,13 +73,13 @@ public:
      * \pre Rep un punter a un tret
      * \post El paràmetre implícit ara conté el tret a la llista
      */
-    void afegeix_tret(Tret *t);
+    void afegeix_tret(string);
 
     /** @brief Elimina un Tret t del paràmetre implícit.
      * \pre Rep un punter a un tret
      * \post El paràmetre implícit ara no conté aquest tret al set de Trets.
      */
-    void elimina_tret(Tret *t);
+    void elimina_tret(string);
 
 
 
@@ -100,9 +94,9 @@ private:
     */
     pair<int, int> progenitors;
 
-    /** @brief vector amb punters als trets que es manifesten en aquest individu
+    /** @brief set amb els noms dels trets que es manifesten en aquest individu
     */
-    set<Tret*> trets;
+    set<string> trets;
 
 
 };

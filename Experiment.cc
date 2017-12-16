@@ -63,7 +63,7 @@ void Experiment::afegeix_tret(string nom, int id) {
     }
     // Enllacem un amb l'altre (posem el id del individu al tret, i una referencia del tret al individu)
     t.afegeix_manifestacio(id);
-    this->individus[id].afegeix_tret(&t);
+    this->individus[id].afegeix_tret(nom);
 
     // Recalculem la intersecció
     recalcular_tret_addicio(t, id);
@@ -87,14 +87,13 @@ void Experiment::consulta_tret(string nom) {
 }
 
 void Experiment::treu_tret(string nom, int id) {
-    // TODO No comprovem primer si el tret no existeix en general?
     // Comprovem si el tret existeix en l'individu donat
     if (!trets[nom].es_manifesta(id)) {
         cout << "  error" << endl;
     } else {
         // Eliminem l'enllaç entre el tret i l'individu
         bool eliminar = trets[nom].treu_manifestacio(id);
-        individus[id].elimina_tret(&trets[nom]);
+        individus[id].elimina_tret(nom);
 
         // Ara comprovem si hem d'eliminar tot rastre d'aquest tret
         if (eliminar) {

@@ -74,29 +74,22 @@ pair<bool, BinTree<int>> Familia::construeix_subarbre_distribucio(const BinTree<
     BinTree<int> res;
     
     if(ha_manifestat_esquerra.first || ha_manifestat_dret.first) {
-        // Sha manifestat abans en algun dels dos fills, per tant retornarem true al parell.  Ara determinem quins fills posem al nou subarbre.
+        // Sha manifestat abans en algun dels dos fills, per tant retornarem true al parell i retornem els arbres.
 
         int val;
         if(t.es_manifesta(arbre.value())) val = arbre.value();
           else val = -1*arbre.value();
 
-        if(ha_manifestat_esquerra.first && ha_manifestat_dret.first) {
-            // S'ha manifestat abans en ambdós fills, per tant els conservem als dos en el nou subarbre.
-            res = BinTree<int>(val, ha_manifestat_esquerra.second, ha_manifestat_dret.second);
-        } else if(ha_manifestat_esquerra.first) {
-            // S'ha manifestat abans en el fill esquerra, per tant conservem aquest en el nou subarbre.
-            res = BinTree<int>(val, ha_manifestat_esquerra.second, BinTree<int>());
-        } else {
-            // S'ha manifestat abans en el fill dret, per tant conservem aquest en el nou subarbre.
-            res = BinTree<int>(val, ha_manifestat_dret.second, BinTree<int>());
-        }
+        res = BinTree<int>(val, ha_manifestat_esquerra.second, ha_manifestat_dret.second);
         return make_pair(true, res);
     } else {
         // No s'ha manifestat abans.  Comprovem ara si l'individu del node actual manifesta el tret.
-        int val;
-        if(t.es_manifesta(arbre.value())) val = arbre.value();
-          else val = -1*arbre.value();
-        return make_pair(t.es_manifesta(arbre.value()), BinTree<int>(val));
+        if(t.es_manifesta(arbre.value())) {
+            return make_pair(true, BinTree<int>(arbre.value()));
+        } else {
+            return make_pair(false, BinTree<int>());
+        }
+
     }
     
 }

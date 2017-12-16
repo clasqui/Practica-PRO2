@@ -3,9 +3,10 @@
 */
 
 #include "Individu.hh"
+#include <cassert>
 
 Individu::Individu() {
-    this->trets = set<Tret *>();
+    this->trets = set<string>();
 }
 
 void Individu::llegeix_individu(int m) {
@@ -21,15 +22,13 @@ void Individu::mostra_cromosomes() const {
 }
 
 void Individu::mostra_trets() const {
-    set<Tret*>::iterator it;
-    for (it = trets.begin(); it != trets.end(); ++it) {
+    for(auto tret:trets) {
         cout << "  ";
-        Tret *p = *it;
-        cout << p->consul_nom() << endl;
+        cout << tret << endl;
     }
 }
 
-void Individu::afegeix_tret(Tret *t) {
+void Individu::afegeix_tret(string t) {
     this->trets.insert(t);
 }
 
@@ -37,6 +36,6 @@ Cromosoma Individu::consul_cromosomes() const {
     return this->cromosomes;
 }
 
-void Individu::elimina_tret(Tret *t) {
+void Individu::elimina_tret(string t) {
     trets.erase(t);
 }
