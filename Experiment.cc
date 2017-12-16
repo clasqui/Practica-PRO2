@@ -66,7 +66,7 @@ void Experiment::afegeix_tret(string nom, int id) {
     this->individus[id].afegeix_tret(&t);
 
     // Recalculem la intersecció
-    recalcular_tret_addició(t, id);
+    recalcular_tret_addicio(t, id);
 
 
     //Quan hem acabat, posem el tret al registre un altre cop
@@ -112,13 +112,13 @@ void Experiment::distribucio_tret(string nom) {
         cout << "  error" << endl;
     } else {
         t = (*result).second;
-        
+        familia.imprimeix_distribucio(t);
     }
     
 }
 
 //Funcions Privades
-void Experiment::recalcular_tret_addició(Tret &t, int id) {
+void Experiment::recalcular_tret_addicio(Tret &t, int id) {
     Cromosoma c = individus[id].consul_cromosomes();
     t.recalcular_interseccio(c);
 }

@@ -135,7 +135,7 @@ private:
      * \pre Rep un Tret t per referència i un id d'un individu 1 <= id <= n
      * \post El Tret t ara conté la intersecció de gens que fan que es manifesti correctament
      */
-    void recalcular_tret_addició(Tret &t, int id);
+    void recalcular_tret_addicio(Tret &t, int id);
 
     /** @brief Recalcula la intersecció dels gens que fan que es manifesti un Tret t
      *  Cridem aquesta funció només quan el càlcul s'ha de fer perquè s'ha eliminat el tret en un indvidu.
