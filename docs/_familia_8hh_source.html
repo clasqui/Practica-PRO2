@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pràctica Marc Clascà Ramírez: Fitxer de Codi Familia.hh</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Pràctica Marc Clascà Ramírez
+   &#160;<span id="projectnumber">version 1 26-abr-2017</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generat per Doxygen 1.8.14 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Cerca');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Familia.hh</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_familia_8hh.html">Veure la documentació d'aquest fitxer.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef PRACTICA_FAMILIA_HH</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define PRACTICA_FAMILIA_HH</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_individu_8hh.html">Individu.hh</a>&quot;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;BinTree.cc&quot;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_tret_8hh.html">Tret.hh</a>&quot;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_familia.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_familia.html">Familia</a> {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    </div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_familia.html#a6598ba07177a8ccf2d8cc68bb5fdee08">Familia</a>();</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    </div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_familia.html#a6cb6b2985384bbfcd8def384b1fe90a5">llegeix_familia</a>(vector&lt;Individu&gt;&amp; registre);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_familia.html#aabc26df18979620571d80ec352c56f08">imprimeix_distribucio</a>(<a class="code" href="class_tret.html">Tret</a> &amp;t);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_familia.html#a880d980d94afa88b9766af81f4451701">llegeix_familia_i</a>(BinTree&lt;int&gt; &amp;<a class="code" href="class_familia.html#a6ca8a9944837dc3465a8de327af89378">arbre</a>, vector&lt;Individu&gt;&amp; registre);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_familia.html#a6ca8a9944837dc3465a8de327af89378">   55</a></span>&#160;    BinTree&lt;int&gt; <a class="code" href="class_familia.html#a6ca8a9944837dc3465a8de327af89378">arbre</a>;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    pair&lt;bool, BinTree&lt;int&gt;&gt; <a class="code" href="class_familia.html#af36632e1a81e5325c49877257e2818a6">construeix_subarbre_distribucio</a>(<span class="keyword">const</span> BinTree&lt;int&gt; &amp;arbre, <a class="code" href="class_tret.html">Tret</a> &amp;t);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_familia.html#a9e2e1ff8f2776a5588cbb1230bedfc95">imprimeix_arbre</a>(<span class="keyword">const</span> BinTree&lt;int&gt; &amp;arbre) <span class="keyword">const</span>;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif //PRACTICA_FAMILIA_HH</span></div><div class="ttc" id="class_familia_html_a6ca8a9944837dc3465a8de327af89378"><div class="ttname"><a href="class_familia.html#a6ca8a9944837dc3465a8de327af89378">Familia::arbre</a></div><div class="ttdeci">BinTree&lt; int &gt; arbre</div><div class="ttdoc">Arbre del tipus BinTree&lt;int&gt; que representa les relacions paternofilials. L&amp;#39;arrel de l&amp;#39;arbre es un en...</div><div class="ttdef"><b>Definition:</b> <a href="_familia_8hh_source.html#l00055">Familia.hh:55</a></div></div>
+<div class="ttc" id="class_familia_html_aabc26df18979620571d80ec352c56f08"><div class="ttname"><a href="class_familia.html#aabc26df18979620571d80ec352c56f08">Familia::imprimeix_distribucio</a></div><div class="ttdeci">void imprimeix_distribucio(Tret &amp;t)</div><div class="ttdoc">Imprimeix l&amp;#39;arbre de parentiu tenint en compte com es distribueix el Tret t. </div><div class="ttdef"><b>Definition:</b> <a href="_familia_8cc_source.html#l00035">Familia.cc:35</a></div></div>
+<div class="ttc" id="class_familia_html_af36632e1a81e5325c49877257e2818a6"><div class="ttname"><a href="class_familia.html#af36632e1a81e5325c49877257e2818a6">Familia::construeix_subarbre_distribucio</a></div><div class="ttdeci">pair&lt; bool, BinTree&lt; int &gt; &gt; construeix_subarbre_distribucio(const BinTree&lt; int &gt; &amp;arbre, Tret &amp;t)</div><div class="ttdoc">Construeix un subarbre de l&amp;#39;arbre original que conté els camins a tots els fills als quals es manifes...</div><div class="ttdef"><b>Definition:</b> <a href="_familia_8cc_source.html#l00065">Familia.cc:65</a></div></div>
+<div class="ttc" id="class_familia_html_a6cb6b2985384bbfcd8def384b1fe90a5"><div class="ttname"><a href="class_familia.html#a6cb6b2985384bbfcd8def384b1fe90a5">Familia::llegeix_familia</a></div><div class="ttdeci">void llegeix_familia(vector&lt; Individu &gt; &amp;registre)</div><div class="ttdoc">Llegeix una familia d&amp;#39;individus. </div><div class="ttdef"><b>Definition:</b> <a href="_familia_8cc_source.html#l00011">Familia.cc:11</a></div></div>
+<div class="ttc" id="class_tret_html"><div class="ttname"><a href="class_tret.html">Tret</a></div><div class="ttdoc">Representa un Tret amb els la intersecció de gens que el representa i els individus als quals es mani...</div><div class="ttdef"><b>Definition:</b> <a href="_tret_8hh_source.html#l00025">Tret.hh:25</a></div></div>
+<div class="ttc" id="class_familia_html_a6598ba07177a8ccf2d8cc68bb5fdee08"><div class="ttname"><a href="class_familia.html#a6598ba07177a8ccf2d8cc68bb5fdee08">Familia::Familia</a></div><div class="ttdeci">Familia()</div><div class="ttdoc">Constructora per defecte. </div><div class="ttdef"><b>Definition:</b> <a href="_familia_8cc_source.html#l00008">Familia.cc:8</a></div></div>
+<div class="ttc" id="class_familia_html_a880d980d94afa88b9766af81f4451701"><div class="ttname"><a href="class_familia.html#a880d980d94afa88b9766af81f4451701">Familia::llegeix_familia_i</a></div><div class="ttdeci">void llegeix_familia_i(BinTree&lt; int &gt; &amp;arbre, vector&lt; Individu &gt; &amp;registre)</div><div class="ttdoc">LLegeix recursivament els individus d&amp;#39;una familia i els introdueix a l&amp;#39;arbre. </div><div class="ttdef"><b>Definition:</b> <a href="_familia_8cc_source.html#l00046">Familia.cc:46</a></div></div>
+<div class="ttc" id="_tret_8hh_html"><div class="ttname"><a href="_tret_8hh.html">Tret.hh</a></div><div class="ttdoc">Especificació de la classe Tret. </div></div>
+<div class="ttc" id="class_familia_html_a9e2e1ff8f2776a5588cbb1230bedfc95"><div class="ttname"><a href="class_familia.html#a9e2e1ff8f2776a5588cbb1230bedfc95">Familia::imprimeix_arbre</a></div><div class="ttdeci">void imprimeix_arbre(const BinTree&lt; int &gt; &amp;arbre) const</div><div class="ttdoc">Imprimeix recursivament i en inordre un BinTree per la sortida estàndard. </div><div class="ttdef"><b>Definition:</b> <a href="_familia_8cc_source.html#l00097">Familia.cc:97</a></div></div>
+<div class="ttc" id="_individu_8hh_html"><div class="ttname"><a href="_individu_8hh.html">Individu.hh</a></div><div class="ttdoc">Especificació de la classe Individu. </div></div>
+<div class="ttc" id="class_familia_html"><div class="ttname"><a href="class_familia.html">Familia</a></div><div class="ttdoc">Representa els individus d&amp;#39;un experiment i les seves relacions paternofilials. Els nodes de l&amp;#39;arbre c...</div><div class="ttdef"><b>Definition:</b> <a href="_familia_8hh_source.html#l00016">Familia.hh:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generat per &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

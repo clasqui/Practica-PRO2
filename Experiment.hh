@@ -20,7 +20,7 @@ using namespace std;
 
 
 /** @brief Tipus Registre d'individus.<br>
- * El tipus RegistreIndividus és un mapa en el qual la clau és l'<em>id</em> de l'individu i el valor es un objecte de la classe Individu
+ * El tipus RegistreIndividus és un vector en el qual elements de la classe Individu es troben en la posició <em>id</em> del vector.
     */
 typedef vector<Individu> RegistreIndividus;
 
@@ -32,7 +32,7 @@ typedef map<string, Tret> RegistreTrets;
 /** @class Experiment
     @brief Representa un experiment amb els individus i els trets que estem estudiant.
 
-    Conté, en un map, tots els individus de l'experiment, i en un altre map els trets de l'experiment
+    Conté, en un vector, tots els individus de l'experiment, i en un altre map els trets de l'experiment
 
 */
 class Experiment {
@@ -77,13 +77,13 @@ public:
 
     /** @brief Elimina un tret a un individu.
       \pre Rep el nom del tret i l'id de l'individu al qual ja no es manifesta
-      \post Si aquest tret no es manifesta a cap mes individu després d'aquest procediment, s'elimina del registre de trets.
+      \post Si aquest tret no es manifesta a cap mes individu després d'aquest procediment, s'elimina del RegsitreTrets <em>trets</em>.
     */
     void treu_tret(string nom, int id);
 
     /** @brief Consulta un tret.
       \pre Rep el nom del tret que es vol consultar
-      \post Es mostra la combinacio que fa que es manifesti aquest tret i els ids del individus en els quals es manifesta. Si no existeix escriu "error".
+      \post Es mostra la combinacio que fa que es manifesti aquest tret i els ids del individus en els quals es manifesta en ordre creixent per <em>id</em>. Si no existeix escriu "error".
     */
     void consulta_tret(string nom);
 
@@ -96,7 +96,7 @@ public:
 
     /** @brief Mostra la distribució d'un tret
      \pre <em>Rep el nom del tret</em>
-     \post Imprimeix l'arbre genealogic en inordre amb els indvidus, dient en cada cas si es manifesta o no.
+     \post Imprimeix el subarbre genealògic en inordre amb els camins a tots els individus que manifesten aques tret. <br>Si pel camí hi ha trets que no manifesten el tret els mostrarem amb l'<em>id</em> canviat de signe.
    */
     void distribucio_tret(string nom);
 
@@ -108,22 +108,23 @@ private:
     */
     int n;
 
-    /** @brief Nombre de gens de cada individu
+    /** @brief Nombre de gens que tenen els cromosomes dels individus.
     */
     int m;
 
     /** @brief El Registre dels individus amb els quals treballem en aquest experiment.<br> 
-     *  En aquest mapa estan indexats pel seu identificador <em>1 <= id <= n</em>
+     *  En aquest vector els objectes de la classe Individu estan indexats pel seu identificador <em>1 <= id <= n</em>
+     *  Això fa que la posició <em>individus[0]</em> sigui buida sempre.
     */
     RegistreIndividus individus;
 
     /** @brief El Registre dels trets amb els quals treballem en aquest experiment.<br>
-     *  En aquest mapa estan indexats pel seu nom
+     *  En aquest mapa els objectes de a classe Tret estan indexats pel seu nom.
     */
     RegistreTrets trets;
     
-    /** @brief Objecte de tipus arbre que representa la familia d'individus amb la qual treballem en aquest experiment
-     * 
+    /** @brief Objecte de tipus arbre que representa la familia d'individus amb la qual treballem en aquest Experiment.
+     *
      */
      Familia familia;
 

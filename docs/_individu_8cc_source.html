@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pràctica Marc Clascà Ramírez: Fitxer de Codi Individu.cc</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Pràctica Marc Clascà Ramírez
+   &#160;<span id="projectnumber">version 1 26-abr-2017</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generat per Doxygen 1.8.14 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Cerca');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Individu.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_individu_8cc.html">Veure la documentació d'aquest fitxer.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_individu_8hh.html">Individu.hh</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_individu.html#ac35091404cfbf11946694806aefa9e7e">    8</a></span>&#160;<a class="code" href="class_individu.html#ac35091404cfbf11946694806aefa9e7e">Individu::Individu</a>() {</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    this-&gt;<a class="code" href="class_individu.html#a0ac8e4f21a7d491e6c8b90f267065bca">trets</a> = set&lt;string&gt;();</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_individu.html#afd3491b1f12075a6c0ebec95ddb011ad">   12</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_individu.html#afd3491b1f12075a6c0ebec95ddb011ad">Individu::llegeix_individu</a>(<span class="keywordtype">int</span> m) {</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="class_cromosoma.html">Cromosoma</a> c = <a class="code" href="class_cromosoma.html">Cromosoma</a>(m);</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    this-&gt;<a class="code" href="class_individu.html#a5ee71f3b370b60e53dc5249ae6e3671b">cromosomes</a> = c;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_individu.html#ab1c2ea7c797a03fa3738251dc4964c0c">   17</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_individu.html#ab1c2ea7c797a03fa3738251dc4964c0c">Individu::mostra_cromosomes</a>()<span class="keyword"> const </span>{</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    this-&gt;<a class="code" href="class_individu.html#a5ee71f3b370b60e53dc5249ae6e3671b">cromosomes</a>.<a class="code" href="class_cromosoma.html#a26dca7b89f40c54927b29a2ce4155fd4">imprimeix_cromosoma</a>(0);</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    cout &lt;&lt; endl;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    this-&gt;<a class="code" href="class_individu.html#a5ee71f3b370b60e53dc5249ae6e3671b">cromosomes</a>.<a class="code" href="class_cromosoma.html#a26dca7b89f40c54927b29a2ce4155fd4">imprimeix_cromosoma</a>(1);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    cout &lt;&lt; endl;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_individu.html#a6e90023bb95808597aae8e6ea45c9aa7">   24</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_individu.html#a6e90023bb95808597aae8e6ea45c9aa7">Individu::mostra_trets</a>()<span class="keyword"> const </span>{</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> tret:<a class="code" href="class_individu.html#a0ac8e4f21a7d491e6c8b90f267065bca">trets</a>) {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;  &quot;</span>;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        cout &lt;&lt; tret &lt;&lt; endl;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_individu.html#ad4d3cfbd6b29b7814142cf2cdc3120bc">   31</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_individu.html#ad4d3cfbd6b29b7814142cf2cdc3120bc">Individu::afegeix_tret</a>(<span class="keywordtype">string</span> t) {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    this-&gt;<a class="code" href="class_individu.html#a0ac8e4f21a7d491e6c8b90f267065bca">trets</a>.insert(t);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_individu.html#aa3abc2f6973a752d71e8fe02df2bc209">   35</a></span>&#160;<a class="code" href="class_cromosoma.html">Cromosoma</a> <a class="code" href="class_individu.html#aa3abc2f6973a752d71e8fe02df2bc209">Individu::consul_cromosomes</a>()<span class="keyword"> const </span>{</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_individu.html#a5ee71f3b370b60e53dc5249ae6e3671b">cromosomes</a>;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_individu.html#a367a16dfdd6248e583522a65ce56af38">   39</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_individu.html#a367a16dfdd6248e583522a65ce56af38">Individu::elimina_tret</a>(<span class="keywordtype">string</span> t) {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="class_individu.html#a0ac8e4f21a7d491e6c8b90f267065bca">trets</a>.erase(t);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div><div class="ttc" id="class_individu_html_aa3abc2f6973a752d71e8fe02df2bc209"><div class="ttname"><a href="class_individu.html#aa3abc2f6973a752d71e8fe02df2bc209">Individu::consul_cromosomes</a></div><div class="ttdeci">Cromosoma consul_cromosomes() const</div><div class="ttdoc">Consulta els cromosomes. </div><div class="ttdef"><b>Definition:</b> <a href="_individu_8cc_source.html#l00035">Individu.cc:35</a></div></div>
+<div class="ttc" id="class_cromosoma_html_a26dca7b89f40c54927b29a2ce4155fd4"><div class="ttname"><a href="class_cromosoma.html#a26dca7b89f40c54927b29a2ce4155fd4">Cromosoma::imprimeix_cromosoma</a></div><div class="ttdeci">void imprimeix_cromosoma(int codi) const</div><div class="ttdoc">Imprimeix els gens del cromosoma segons el codi. </div><div class="ttdef"><b>Definition:</b> <a href="_cromosoma_8cc_source.html#l00032">Cromosoma.cc:32</a></div></div>
+<div class="ttc" id="class_individu_html_a0ac8e4f21a7d491e6c8b90f267065bca"><div class="ttname"><a href="class_individu.html#a0ac8e4f21a7d491e6c8b90f267065bca">Individu::trets</a></div><div class="ttdeci">set&lt; string &gt; trets</div><div class="ttdoc">set amb els noms dels trets que el paràmetre implícit manifesta. </div><div class="ttdef"><b>Definition:</b> <a href="_individu_8hh_source.html#l00086">Individu.hh:86</a></div></div>
+<div class="ttc" id="class_individu_html_a6e90023bb95808597aae8e6ea45c9aa7"><div class="ttname"><a href="class_individu.html#a6e90023bb95808597aae8e6ea45c9aa7">Individu::mostra_trets</a></div><div class="ttdeci">void mostra_trets() const</div><div class="ttdoc">Imprimeix els trets. </div><div class="ttdef"><b>Definition:</b> <a href="_individu_8cc_source.html#l00024">Individu.cc:24</a></div></div>
+<div class="ttc" id="class_individu_html_ac35091404cfbf11946694806aefa9e7e"><div class="ttname"><a href="class_individu.html#ac35091404cfbf11946694806aefa9e7e">Individu::Individu</a></div><div class="ttdeci">Individu()</div><div class="ttdoc">Constructora per defecte. </div><div class="ttdef"><b>Definition:</b> <a href="_individu_8cc_source.html#l00008">Individu.cc:8</a></div></div>
+<div class="ttc" id="class_individu_html_ad4d3cfbd6b29b7814142cf2cdc3120bc"><div class="ttname"><a href="class_individu.html#ad4d3cfbd6b29b7814142cf2cdc3120bc">Individu::afegeix_tret</a></div><div class="ttdeci">void afegeix_tret(string)</div><div class="ttdoc">Afegeix un Tret al paràmetre implícit. </div><div class="ttdef"><b>Definition:</b> <a href="_individu_8cc_source.html#l00031">Individu.cc:31</a></div></div>
+<div class="ttc" id="class_individu_html_ab1c2ea7c797a03fa3738251dc4964c0c"><div class="ttname"><a href="class_individu.html#ab1c2ea7c797a03fa3738251dc4964c0c">Individu::mostra_cromosomes</a></div><div class="ttdeci">void mostra_cromosomes() const</div><div class="ttdoc">Imprimeix els cromosomes a l&amp;#39;entrada estàndard. </div><div class="ttdef"><b>Definition:</b> <a href="_individu_8cc_source.html#l00017">Individu.cc:17</a></div></div>
+<div class="ttc" id="class_individu_html_a5ee71f3b370b60e53dc5249ae6e3671b"><div class="ttname"><a href="class_individu.html#a5ee71f3b370b60e53dc5249ae6e3671b">Individu::cromosomes</a></div><div class="ttdeci">Cromosoma cromosomes</div><div class="ttdoc">Cromosomes del paràmetre implícit. </div><div class="ttdef"><b>Definition:</b> <a href="_individu_8hh_source.html#l00081">Individu.hh:81</a></div></div>
+<div class="ttc" id="class_individu_html_afd3491b1f12075a6c0ebec95ddb011ad"><div class="ttname"><a href="class_individu.html#afd3491b1f12075a6c0ebec95ddb011ad">Individu::llegeix_individu</a></div><div class="ttdeci">void llegeix_individu(int m)</div><div class="ttdoc">Llegeix els cromosomes de l&amp;#39;entrada estàndard i el posa al paràmetre implícit. </div><div class="ttdef"><b>Definition:</b> <a href="_individu_8cc_source.html#l00012">Individu.cc:12</a></div></div>
+<div class="ttc" id="class_individu_html_a367a16dfdd6248e583522a65ce56af38"><div class="ttname"><a href="class_individu.html#a367a16dfdd6248e583522a65ce56af38">Individu::elimina_tret</a></div><div class="ttdeci">void elimina_tret(string)</div><div class="ttdoc">Elimina un Tret del paràmetre implícit. </div><div class="ttdef"><b>Definition:</b> <a href="_individu_8cc_source.html#l00039">Individu.cc:39</a></div></div>
+<div class="ttc" id="class_cromosoma_html"><div class="ttname"><a href="class_cromosoma.html">Cromosoma</a></div><div class="ttdoc">Representa un parell de cromosomes, amb els seus gens. </div><div class="ttdef"><b>Definition:</b> <a href="_cromosoma_8hh_source.html#l00019">Cromosoma.hh:19</a></div></div>
+<div class="ttc" id="_individu_8hh_html"><div class="ttname"><a href="_individu_8hh.html">Individu.hh</a></div><div class="ttdoc">Especificació de la classe Individu. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generat per &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

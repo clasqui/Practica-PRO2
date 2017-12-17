@@ -21,7 +21,7 @@ public:
 
     //Constructores
 
-    /** @brief Constructora per defecte.
+    /** @brief Constructora buida.
         S'executa automàticament en declarar un Cromosoma.
 
         \pre <em>Cert</em>
@@ -33,7 +33,7 @@ public:
         Llegeix els gens del parell de cromosomes.
         S'executa automàticament en declarar un Cromosoma.
 
-        \pre Dues sèries de m gens a l'entrada estàndard
+        \pre Dues sèries de m gens a l'entrada estàndard.  També rep el numero de gens m que tindran els cromosomes.
         \post El resultat és un Cromosoma nou.
     */
     Cromosoma(const int m);
@@ -69,7 +69,7 @@ private:
      */
     vector<int> c1;
 
-    /** @bref Vector de gens del segon cromosoma del parell
+    /** @brief Vector de gens del segon cromosoma del parell
      *
      */
     vector<int> c2;

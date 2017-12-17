@@ -11,7 +11,7 @@
 
 /** @class Familia
  *  @brief Representa els individus d'un experiment i les seves relacions paternofilials.
- *  Els nodes de l'arbre contenen punters als individus, de manera que el seu accés és molt més fàcil i té un cost molt baix
+ *  Els nodes de l'arbre contenen l'id de cada Individu.
  */
 class Familia {
 public:
@@ -49,19 +49,19 @@ private:
     void llegeix_familia_i(BinTree<int> &arbre, vector<Individu>& registre);
 
 
-    /** @brief Arbre del tipus BinTree que representa les relacions paternofilials
+    /** @brief Arbre del tipus BinTree<int> que representa les relacions paternofilials.
+     *   L'arrel de l'arbre es un enter que representa l'id de l'individu.
      */
     BinTree<int> arbre;
     
-    /** @brief Imprimeix el subarbre d'arbre que conté els camins a tots els fills als quals es manifesta el Tret t.
+    /** @brief Construeix un subarbre de l'arbre original que conté els camins a tots els fills als quals es manifesta el Tret t.
 
         \pre Rep per referència un BinTree arbre i un Tret t
-        \post Es mostra a la sortida estàndard el subarbre d'arbre en inordre que conté tots els camins a els fills individus als quals es manifesta el tret t.  Els nodes seran l'id de l'individu si el tret es manifesta, i l'id en signe invers si el tret no es manifesta.
-        Retorna un booleà que indica si en els fills del subarbre hi ha algun individu que manifesta el Tret t.
+        \post Retorna un parell amb un bool i un BinTree<int>.  El bool ens indica si en el nostre arbre s'ha manifestat el tret t. El BinTree és un subabre amb els id dels individus que manifesten el tret, o amb l'id canviat de signe els que no el manifesten.  Si els fills no manifesten el tret, el subarbre és buit.
     */
     pair<bool, BinTree<int>> construeix_subarbre_distribucio(const BinTree<int> &arbre, Tret &t);
 
-    /** @brief Imprimeix recursivament un BinTree per la sortida estàndard
+    /** @brief Imprimeix recursivament i en inordre un BinTree per la sortida estàndard
 
         \pre Rep per referència un arbre.
         \post Si l'arbre és buit, retorna. Si és no buit, imprimeix l'arbre esquerra, imprimeix el valor de l'arrel i imprimeix l'arbre dret.

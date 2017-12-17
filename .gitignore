@@ -36,5 +36,3 @@ cmake-build-debug/
 *.zip
 .DS_STORE
 .idea/
-
-./DOC

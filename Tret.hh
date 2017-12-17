@@ -19,7 +19,7 @@
 using namespace std;
 
 /** @class Tret
-    @brief Representa un Tret amb els cromosomes que el representen i els individus als quals es manifesta
+    @brief Representa un Tret amb els la intersecció de gens que el representa i els individus als quals es manifesta.
 
 */
 class Tret {
@@ -38,50 +38,45 @@ public:
 
     /** @brief Constructora per defecte.
 
-        S'executa automàticament en declarar un Tret amb un nom.
-        \pre Rep un string amb el nom del nou tret i un int amb el numero de gens per cromosoma
-        \post El resultat és un Tret nou amb el paràmetre <em>nom</em> inicialitzat.
+        S'executa automàticament en declarar un Tret amb un nom i el numero de gens de cada Cromosoma.
+        \pre Rep un string amb el nom del nou tret i un int amb el numero de gens per Cromosoma.
+        \post El resultat és un Tret nou amb el paràmetre <em>nom</em> inicialitzat i amb el vector interseccio incialitzat amb mida <em>m</em>.
     */
     Tret(string nom, int m);
 
 
-    /** @brief Consulta el nom del tret
+    /** @brief Consulta el nom del paràmetre implícit
       \pre <em>Cert</em>
-      \post Retorna el nom del tret
+      \post Retorna el nom del paràmetre implícit.
     */
     string consul_nom() const;
 
 
-    /** @brief Afegeix un individu al qual es manifesta el tret
-      \pre <em>id de l'individu</em>
-      \post Retorna el nom de l'individu
+    /** @brief Afegeix un individu al qual es manifesta el paràmetre implícit.
+      \pre <em>id</em> de l'individu
+      \post Ara el paràmetre implícit conté l'id de l'individu a la llista de individus.
     */
     void afegeix_manifestacio(int id);
 
     /** @brief Treu un individu en el que el tret es manifesta
         La funció també ens indicacrà a través d'un bool si el tret ja no es manifesta en CAP individu, i per tant s'ha d'eliminar.
-      \pre Rep un id, 1 <= id <= n,  de l'individu
+      \pre Rep un id, <em>1 <= id <= n</em>,  de l'individu
       \post El resultat és true si després d'eliminar l'individu no queden individus.
     */
     bool treu_manifestacio(int id);
 
-    /** @brief Imprimeix els gens pels quals es manifesta el tret
+    /** @brief Imprimeix els gens pels quals es manifesta el paràmetre implícit.
       \pre <em>Cert</em>
-      \post Imprimeix els gens pels quals es manifesta el tret
+      \post Imprimeix els gens pels quals es manifesta el paràmetre implícit.
     */
     void mostra_interseccio() const;
 
     /** @brief Retona els individus als quals es manifesta el tret
       \pre <em>Cert</em>
-      \post Retorna el vecotr d'enters amb els id dels individus.
+      \post Retorna el vector d'enters amb els id dels individus.
     */
     list<int> consulta_individus() const;
 
-    /** @brief Retona els numero d'individus als quals es manifesta el tret
-      \pre <em>Cert</em>
-      \post L'enter indica el nombre d'elements de la llista individus
-    */
-    int count_individus() const;
 
     /** @brief Mostra els individus als quals es manifesta el tret a la sortida estàndard
       \pre <em>Cert</em>
@@ -95,7 +90,7 @@ public:
     */
     bool es_manifesta(int id) const;
 
-    /** @brief Recalcula la manifestació del tret fent la intersecció entre l'actual i els gens del cromosoma que rep.
+    /** @brief Recalcula la manifestació del paràmetre implícit fent la intersecció entre l'actual i els gens del cromosoma que rep.
      *  \pre Rep per referència un Cromosoma c amb els gens
      *  \post Ara el paràmetre implícit conté la intersecció dels gens entre l'actual i el Cromosoma que rep.
      */
@@ -123,7 +118,7 @@ private:
      vector<pair<int, int>> interseccio;
 
     /** @brief Ens indica que la intersecció s'haurà de recalcular des de 0
-     * Això fa substancialment diferent la funció recalcular_interseccio(), ja que si recalcular = true,
+     * Això fa substancialment diferent la funció recalcular_interseccio(), ja que si recalcular == true,
      * el cromosoma que es calcula es posa directament a la intersecció.
      */
     bool recalcular;

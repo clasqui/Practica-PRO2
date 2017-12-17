@@ -85,10 +85,6 @@ bool Tret::treu_manifestacio(int id) {
     return (individus.size() == 0);
 }
 
-int Tret::count_individus() const {
-    return individus.size();
-}
-
 void Tret::buida() {
     this->recalcular = true;
 }

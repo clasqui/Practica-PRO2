@@ -20,8 +20,6 @@ using namespace std;
 /** @class Individu
     @brief Representa un indvidu amb el seu parell de cromosomes
 
-    També conté els ids dels progenitors, si els té.
-
 */
 class Individu {
 public:
@@ -38,7 +36,7 @@ public:
 
 
     /** @brief Llegeix els cromosomes de l'entrada estàndard i el posa al paràmetre implícit
-      \pre Rep el numero de gens que han de tenir els cromosomes.
+      \pre Rep el numero de gens que han de tenir els cromosomes i per l'entrada estàndard llegeix els dos cromosomes.
       \post El paràmetre implícit ara conté el els cromosomes llegits
     */
     void llegeix_individu(int m);
@@ -56,28 +54,21 @@ public:
     */
     void mostra_cromosomes() const;
 
-    /** @brief Consulta els id dels progenitors
-      \pre <em>Cert</em>
-      \post Retorna un parell d'enters amb els ids dels progenitors
-    */
-    pair<int, int> consul_progenitors() const;
-
     /** @brief Imprimeix els trets
      \pre <em>Cert</em>
-     \post Mostra els trets d'aquell individu ordenats alfabèticament
+     \post Mostra els trets del paràmetre implícit ordenats alfabèticament.
    */
     void mostra_trets() const;
 
-    /** @brief Afegeix un tret
-     * Enllaça un tret amb el paràmetre implícit
-     * \pre Rep un punter a un tret
-     * \post El paràmetre implícit ara conté el tret a la llista
+    /** @brief Afegeix un Tret al paràmetre implícit.
+     * \pre Rep una string que representa el nom d'un Tret.
+     * \post El paràmetre implícit ara conté el el nom del tret al set de <em>trets</em>
      */
     void afegeix_tret(string);
 
-    /** @brief Elimina un Tret t del paràmetre implícit.
-     * \pre Rep un punter a un tret
-     * \post El paràmetre implícit ara no conté aquest tret al set de Trets.
+    /** @brief Elimina un Tret del paràmetre implícit.
+     * \pre Rep una string que representa el nom del Tret.
+     * \post El paràmetre implícit ara no conté aquest tret al set <em>trets</em>
      */
     void elimina_tret(string);
 
@@ -85,16 +76,12 @@ public:
 
 private:
 
-    /** @brief Cromosomes de l'individu
+    /** @brief Cromosomes del paràmetre implícit.
     */
     Cromosoma cromosomes;
 
 
-    /** @brief parell amb els ids dels progenitors, si en té
-    */
-    pair<int, int> progenitors;
-
-    /** @brief set amb els noms dels trets que es manifesten en aquest individu
+    /** @brief set amb els noms dels trets que el paràmetre implícit manifesta.
     */
     set<string> trets;
 
